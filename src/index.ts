@@ -30,7 +30,10 @@ const app = express();
 
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin : "https://dmusic.onrender.com",
+    credentials : true,
+}));
 
 app.get("/", (req: Request, res : Response) => {
     res.json("Admin services running");
